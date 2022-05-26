@@ -1,0 +1,19 @@
+const { Schema, model } = require("mongoose");
+
+const foodSchema = new Schema({
+  name: { type: String },
+  category: {
+      type: String,
+      enum : ['Meat','Vegetable','Fruit','Sweets','Drinks','Other'],
+  },
+  imageUrl: {
+    type: String,
+  },
+  expireDate: { type: Number },
+  quantity: { type: Number },
+  note: { type: String },
+});
+
+const Food = model("Food", foodSchema);
+
+module.exports = Food;
