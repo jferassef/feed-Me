@@ -5,4 +5,6 @@ router.get("/", (req, res, next) => {
   res.render("index");
 });
 
+// router.use("/foods", require("./food.routes"));
+
 module.exports = router;
