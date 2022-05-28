@@ -56,7 +56,7 @@ router.post("/:id/edit", async (req, res, next) => {
       { name, category, imageUrl, expireDate, quantity, note },
       { new: true }
     );
-    res.redirect("/foods");
+    res.redirect(`/foods`);
   } catch (error) {
     console.log(error);
   }
@@ -74,10 +74,11 @@ router.post("/:id/delete", async (req, res, next) => {
 
 router.get("/:id", async (req, res) => {
   try {
-    const foodDetails = await Food.findById(req.params.id);
-    res.render("foods/food", foodDetails);
+    const { id } = req.params;
+    const food = await Food.findById(id);
+    res.render("foods/food-details", food);
   } catch (error) {
-    console.log(error);
+    next(error);
   }
 });
 
