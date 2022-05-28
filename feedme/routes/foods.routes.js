@@ -15,11 +15,11 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-router.get("/foods/food-create", (req, res, next) => {
+router.get("/food-create", (req, res, next) => {
   res.render("foods/food-create");
 });
 
-router.post("/foods/food-create", async (req, res, next) => {
+router.post("/food-create", async (req, res, next) => {
   try {
     const { name, category, imageUrl, expireDate, quantity, note } = req.body;
     await Food.create({
@@ -37,6 +37,7 @@ router.post("/foods/food-create", async (req, res, next) => {
   }
 });
 
+/*
 router.get("foods/:id/edit", async (req, res, next) => {
   try {
     const { id } = req.params;
@@ -80,3 +81,5 @@ router.get("/:id", async (req, res) => {
     console.log(error);
   }
 });
+*/
+module.exports = router;
