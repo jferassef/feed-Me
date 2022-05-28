@@ -37,8 +37,7 @@ router.post("/food-create", async (req, res, next) => {
   }
 });
 
-/*
-router.get("foods/:id/edit", async (req, res, next) => {
+router.get("/:id/edit", async (req, res, next) => {
   try {
     const { id } = req.params;
     const food = await Food.findById(id);
@@ -76,10 +75,10 @@ router.post("/:id/delete", async (req, res, next) => {
 router.get("/:id", async (req, res) => {
   try {
     const foodDetails = await Food.findById(req.params.id);
-    res.render("rooms/room", foodDetails);
+    res.render("foods/food", foodDetails);
   } catch (error) {
     console.log(error);
   }
 });
-*/
+
 module.exports = router;
