@@ -6,11 +6,11 @@ router.get("/", (req, res, next) => {
   res.render("index");
 });
 
-router.post("/", async(req, res, next)=>{
+router.post("/", async (req, res, next) => {
   try {
-    const { name} = req.body;
+    const { name } = req.body;
     await User.create({
-      name
+      name,
     });
     res.redirect("auth/signup");
   } catch (error) {
@@ -18,9 +18,7 @@ router.post("/", async(req, res, next)=>{
   }
 });
 
-
-
-
 router.use("/foods", require("./foods.routes"));
+router.use("/user", require("./user.routes"));
 
 module.exports = router;
