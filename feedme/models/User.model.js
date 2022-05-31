@@ -12,7 +12,7 @@ const userSchema = new Schema(
   },
   {
     timestamps: true,
-    //  foodModel: [{ type: Schema.Types.ObjectId, ref: "Food", default: [] }],
+    //foodModel: [{ type: Schema.Types.ObjectId, ref: "Food", default: [] }],
   }
 );
 
