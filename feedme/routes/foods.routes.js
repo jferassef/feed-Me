@@ -1,5 +1,4 @@
 const router = require("express").Router();
-const isLoggedIn = require("../middleware/isLoggedIn");
 const Food = require("../models/Food.model");
 const User = require("../models/User.model");
 
@@ -31,6 +30,10 @@ router.get("/", async (req, res, next) => {
 router.get("/food-create", (req, res, next) => {
   res.render("foods/food-create");
 });
+
+router.get("/recipes", async (req, res, next) => {
+  res.render("foods/recipes")
+})
 
 router.post("/food-create", async (req, res, next) => {
   try {

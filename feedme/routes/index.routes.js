@@ -18,7 +18,4 @@ router.post("/", async (req, res, next) => {
   }
 });
 
-router.use("/foods", require("./foods.routes"));
-router.use("/user", require("./user.routes"));
-
 module.exports = router;

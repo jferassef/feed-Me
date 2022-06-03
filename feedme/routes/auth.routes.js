@@ -86,6 +86,7 @@ router.get("/login", (req, res) => {
 });
 
 router.post("/login", (req, res, next) => {
+  console.log("ESTOY HACIENDO ALGO")
   const { username, password } = req.body;
 
   if (!username) {
@@ -132,7 +133,7 @@ router.get("/logout", isLoggedIn, (req, res) => {
         .status(500)
         .render("auth/logout", { errorMessage: err.message });
     }
-    res.redirect("/");
+    res.render("index");
   });
 });
 
