@@ -4,8 +4,9 @@ const User = require("../models/User.model");
 
 router.get("/food-shoplist", async (req, res, next) => {
   try {
+    const { user } = req.session;
     const foods = await Food.find();
-    const shopList = foods.filter((food) => food.quantity < 2);
+    const shopList = foods.filter((food) => food.quantity < 2 && food.user == user);
     res.render("foods/food-shoplist", { shopList });
   } catch (error) {
     next(error);
@@ -14,14 +15,19 @@ router.get("/food-shoplist", async (req, res, next) => {
 
 router.get("/", async (req, res, next) => {
   try {
-    const foods = await Food.find();
-    const total = foods.reduce((acc, food) => {
-      return (acc += food.quantity);
-    }, 0);
+    const { user } = req.session;
+
+    const foods = await Food.find({
+      user: user,
+    });
+
+    const total = foods.length;
+
     res.render("foods/foods", {
       foods,
       total,
     });
+
   } catch (error) {
     next(error);
   }
@@ -38,6 +44,7 @@ router.get("/recipes", async (req, res, next) => {
 router.post("/food-create", async (req, res, next) => {
   try {
     const { name, category, imageUrl, expireDate, quantity, note } = req.body;
+    const { user } = req.session;
     await Food.create({
       name,
       category,
@@ -45,6 +52,7 @@ router.post("/food-create", async (req, res, next) => {
       expireDate,
       quantity,
       note,
+      user
     });
 
     res.redirect("/foods");
@@ -67,9 +75,11 @@ router.post("/:id/edit", async (req, res, next) => {
   try {
     const { id } = req.params;
     const { name, category, imageUrl, expireDate, quantity, note } = req.body;
+    const { user } = req.session;
+
     await Food.findByIdAndUpdate(
       id,
-      { name, category, imageUrl, expireDate, quantity, note },
+      { name, category, imageUrl, expireDate, quantity, note, user },
       { new: true }
     );
     res.redirect(`/foods`);
