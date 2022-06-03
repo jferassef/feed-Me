@@ -3,23 +3,26 @@ const isLoggedIn = require("../middleware/isLoggedIn");
 const Food = require("../models/Food.model");
 const User = require("../models/User.model");
 
+router.get("/food-shoplist", async (req, res, next) => {
+  try {
+    const foods = await Food.find();
+    const shopList = foods.filter((food) => food.quantity < 2);
+    res.render("foods/food-shoplist", { shopList });
+  } catch (error) {
+    next(error);
+  }
+});
+
 router.get("/", async (req, res, next) => {
   try {
     const foods = await Food.find();
     const total = foods.reduce((acc, food) => {
       return (acc += food.quantity);
     }, 0);
-
-    if (total <= 2) {
-      console.log("Go to the store");
-      res.render("foods/foods", {
-        foods,
-      });
-    } else {
-      res.render("foods/foods", {
-        foods,
-      });
-    }
+    res.render("foods/foods", {
+      foods,
+      total,
+    });
   } catch (error) {
     next(error);
   }
