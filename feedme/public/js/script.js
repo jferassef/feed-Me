@@ -31,6 +31,7 @@ const addNewItem = (event) => {
   const { value } = event.target.itemText;
   if (!value) return;
   const item = document.createElement("li");
+  item.classList.add("item");
   item.addEventListener("click", changeItemState);
   item.textContent = value;
   itemContainer.prepend(item);

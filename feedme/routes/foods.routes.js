@@ -6,7 +6,9 @@ router.get("/food-shoplist", async (req, res, next) => {
   try {
     const { user } = req.session;
     const foods = await Food.find();
-    const shopList = foods.filter((food) => food.quantity < 2 && food.user == user);
+    const shopList = foods.filter(
+      (food) => food.quantity < 2 && food.user == user
+    );
     res.render("foods/food-shoplist", { shopList });
   } catch (error) {
     next(error);
@@ -16,7 +18,6 @@ router.get("/food-shoplist", async (req, res, next) => {
 router.get("/", async (req, res, next) => {
   try {
     const { user } = req.session;
-
     const foods = await Food.find({
       user: user,
     });
@@ -27,7 +28,6 @@ router.get("/", async (req, res, next) => {
       foods,
       total,
     });
-
   } catch (error) {
     next(error);
   }
@@ -38,8 +38,8 @@ router.get("/food-create", (req, res, next) => {
 });
 
 router.get("/recipes", async (req, res, next) => {
-  res.render("foods/recipes")
-})
+  res.render("foods/recipes");
+});
 
 router.post("/food-create", async (req, res, next) => {
   try {
@@ -52,7 +52,7 @@ router.post("/food-create", async (req, res, next) => {
       expireDate,
       quantity,
       note,
-      user
+      user,
     });
 
     res.redirect("/foods");
