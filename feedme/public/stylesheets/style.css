@@ -40,3 +40,12 @@ padding-left: 10px;
   color: black;
 }
 
+.alert{
+  background-color:red;
+
+}
+
+.message{
+  display: none;
+}
+

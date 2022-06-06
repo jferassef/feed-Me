@@ -16,15 +16,6 @@ await name(2);
 }
 welcomeView();*/
 
-/* function alertMessage() {
-  const total = document.querySelector(".total");
-  if (total.innerHTML < 2) {
-    alert("Please go buy food");
-  }
-} 
-
-alertMessage(); */
-
 const itemContainer = document.querySelector(".itemContainer");
 const addNewItem = (event) => {
   event.preventDefault();
@@ -42,3 +33,14 @@ const addNewItem = (event) => {
 changeItemState = (event) => {
   event.target.classList.toggle("done");
 };
+
+alertMessage = () => {
+  const total = document.querySelector(".total");
+  const message = document.querySelector(".message");
+  if (total.innerHTML < 2) {
+    message.classList.toggle("alert");
+    message.classList.toggle("message");
+  }
+};
+
+alertMessage();

@@ -23,10 +23,14 @@ router.get("/", async (req, res, next) => {
     });
 
     const total = foods.length;
+    const totalItems = foods.reduce((acc, food) => {
+      return (acc += food.quantity);
+    }, 0);
 
     res.render("foods/foods", {
       foods,
       total,
+      totalItems,
     });
   } catch (error) {
     next(error);
