@@ -7,7 +7,7 @@ router.get("/food-shoplist", async (req, res, next) => {
     const { user } = req.session;
     const foods = await Food.find();
     const shopList = foods.filter(
-      (food) => food.quantity < 2 && food.user == user
+      (food) => food.quantity < 2 /* && food.user == user */
     );
     res.render("foods/food-shoplist", { shopList });
   } catch (error) {
