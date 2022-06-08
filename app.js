@@ -15,7 +15,6 @@ const hbs = require("hbs");
 
 const app = express();
 
-
 const isLoggedIn = require("./middleware/isLoggedIn");
 
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
@@ -31,7 +30,7 @@ app.use("/", require("./routes/index.routes"));
 app.use("/auth", require("./routes/auth.routes"));
 app.use("/foods", isLoggedIn, require("./routes/foods.routes"));
 app.use("/user", isLoggedIn, require("./routes//user.routes"));
-
+app.use("/shoplist", require("./routes//shoplist.routes"));
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
 
