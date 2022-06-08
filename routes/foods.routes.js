@@ -1,19 +1,7 @@
 const router = require("express").Router();
 const Food = require("../models/Food.model");
 const User = require("../models/User.model");
-
-router.get("/food-shoplist", async (req, res, next) => {
-  try {
-    const { user } = req.session;
-    const foods = await Food.find();
-    const shopList = foods.filter(
-      (food) => food.quantity < 2 /* && food.user == user */
-    );
-    res.render("foods/food-shoplist", { shopList });
-  } catch (error) {
-    next(error);
-  }
-});
+const Shoplist = require("../models/Shoplist.model");
 
 router.get("/", async (req, res, next) => {
   try {

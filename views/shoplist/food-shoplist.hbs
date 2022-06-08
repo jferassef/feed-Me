@@ -1,0 +1,58 @@
+<div class="shopList">
+  <h1>Create List</h1>
+  <p id="demo"></p>
+  <form onsubmit="addNewItem(event)">
+    <input class="input" type="text" name="itemText" autocomplete="off" placeholder="New Item" class="roundBorder">
+    <button type="submit" class="addItemButton" onclick="add_items()">+</button>
+    <button type="submit" class="addItemButton" onclick="add_name()">Add Shopping Name</button>    
+  </form>
+  <ul class="itemContainer"></ul>
+  <form action="/shoplist/food-shoplist" method="POST">
+    <input type="hidden" type="text" class="form-control" id="name" name="name">
+    <input type="hidden" type="text" class="form-control" id="items" name="items">
+    <button type="submit" class="btn btn-dark">Create new Shoplist</button>
+  </form>
+</div>
+<div class="shopList">
+  <h3>Here some suggestions you are running out of</h3>
+<ul>
+{{#each shopList}}
+<li>{{this.name}}</li>
+{{/each }}
+</ul>
+</div>
+<script>
+   let name = "";
+   let items = "";
+    function add_name() {
+      let text;
+      let shoplist = prompt("Please enter Shoplist name:", "New Shoplist");
+      if (shoplist != null && shoplist != "") {        
+        text = shoplist;
+        this.name = text;
+      }
+      document.getElementById("demo").innerHTML = text;
+  }
+ 
+  function add_items() {
+    const itemsContainer = document.querySelector(".itemContainer");
+    let stringList = [];
+    foreach (const item in itemsContainer){
+      stringList.push(item);
+    }
+    this.items = Json.serialize(stringList);
+  }
+  window.onload = function(){
+    if(this.name == "" || this.name == null || this.items == "" || this.items == null){
+      alert("U don't have Items or the list doesn't have name");
+    }
+    else{
+
+     document.getElementById("name").innerHTML=this.name;
+     document.getElementById("items").innerHTML=this.items;
+    }
+  }
+</script>
+
+
+

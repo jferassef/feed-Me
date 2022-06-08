@@ -37,7 +37,7 @@ changeItemState = (event) => {
 alertMessage = () => {
   const total = document.querySelector(".total");
   const message = document.querySelector(".message");
-  if (total.innerHTML < 2) {
+  if (parseInt(total.innerHTML) < 2) {
     message.classList.toggle("alert");
     message.classList.toggle("message");
   }
