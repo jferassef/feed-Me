@@ -1,0 +1,12 @@
+{{#each data}}
+    <div>
+        <h3> {{this.title}} </h3>
+        <img src={{ this.image }}> </img>
+        <h5> Missing ingredients: </h5>
+        <ul>
+        {{#each this.missedIngredients }}
+            <li> {{ this.name }}</li>
+        {{/each}}
+        </ul>
+    </div>
+{{/each}}

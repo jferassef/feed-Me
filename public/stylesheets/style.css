@@ -1,13 +1,10 @@
-body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
 
 a {
-  color: #00b7ff;
+  color: #bdb1ef;
 }
 
 h1 {
-  color: 15px;
+  color: 12px;
 }
 
 .form{
@@ -49,3 +46,8 @@ padding-left: 10px;
   display: none;
 }
 
+.container-fluid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
