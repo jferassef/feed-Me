@@ -2,7 +2,7 @@ const router = require("express").Router();
 const Food = require("../models/Food.model");
 const User = require("../models/User.model");
 const Shoplist = require("../models/Shoplist.model");
-const axios = require('axios');
+const axios = require("axios");
 
 router.get("/", async (req, res, next) => {
   try {
@@ -37,23 +37,24 @@ router.get("/recipes", async (req, res, next) => {
   });
 
   let params = "";
-  for (var i=0; i < foods.length ; ++i) params += (foods[i].name + ',+');
+  for (var i = 0; i < foods.length; ++i) params += foods[i].name + ",+";
   params = params.slice(0, -2);
 
-  const url = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${params}&number=2`
-  
+  const url = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${params}&number=2`;
+
   const { data } = await axios.get(url, {
     headers: {
-      'x-api-key': 'a0323a6f5a0b4d7fa73079f67e5abd8d'
-    }
+      "x-api-key": "a0323a6f5a0b4d7fa73079f67e5abd8d",
+    },
   });
-  
-  res.render("foods/food-recipes", {data: data});
+
+  res.render("foods/food-recipes", { data: data });
 });
 
 router.post("/food-create", async (req, res, next) => {
   try {
-    const { name, category, imageUrl, expireDate, quantity, note } = req.body;
+    const { name, category, imageUrl, expireDate, quantity, note, cost } =
+      req.body;
     const { user } = req.session;
     await Food.create({
       name,
@@ -62,6 +63,7 @@ router.post("/food-create", async (req, res, next) => {
       expireDate,
       quantity,
       note,
+      cost,
       user,
     });
 

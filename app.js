@@ -14,7 +14,7 @@ const express = require("express");
 const hbs = require("hbs");
 
 const app = express();
-
+hbs.registerPartials(__dirname + "/views/partials");
 const isLoggedIn = require("./middleware/isLoggedIn");
 
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
