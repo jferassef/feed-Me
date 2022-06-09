@@ -53,3 +53,6 @@ padding-left: 10px;
   flex-wrap: wrap;
   justify-content: center;
 }
+.hidden{
+  display: none;
+}
