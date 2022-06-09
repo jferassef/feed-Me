@@ -7,27 +7,39 @@ router.get("/food-shoplist", async (req, res, next) => {
   try {
     const { user } = req.session;
     const foods = await Food.find();
-    const shopList = foods.filter(
-      (food) => food.quantity < 2 /* && food.user == user */
+    const shopListSugestion = foods.filter(
+      (food) =>
+        food.quantity < 2 && food.quantity != null /* && food.user == user */
     );
-    res.render("shoplist/food-shoplist", { shopList });
+    const shopList = foods.filter(
+      (food) => food.quantity === null /* && food.user == user */
+    );
+    res.render("shoplist/food-shoplist", {
+      shopList,
+      shopListSugestion,
+    });
   } catch (error) {
     next(error);
   }
 });
 
-/* router.post("/food-shoplist", async (req, res, next) => {
+router.post("/food-shoplist", async (req, res, next) => {
   try {
-    const { item } = req.body;
+    const { name, category, imageUrl, expireDate, quantity, note } = req.body;
     const { user } = req.session;
     await Food.create({
-      item,
+      name,
+      category,
+      imageUrl,
+      expireDate,
+      quantity,
+      note,
     });
 
-    res.redirect("/foods");
+    res.redirect("/shoplist/food-shoplist");
   } catch (error) {
     next(error);
   }
-}); */
+});
 
 module.exports = router;
