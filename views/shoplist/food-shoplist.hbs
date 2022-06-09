@@ -1,58 +1,56 @@
-<div class="shopList">
-  <h1>Create List</h1>
-  <p id="demo"></p>
-  <form onsubmit="addNewItem(event)">
-    <input class="input" type="text" name="itemText" autocomplete="off" placeholder="New Item" class="roundBorder">
-    <button type="submit" class="addItemButton" onclick="add_items()">+</button>
-    <button type="submit" class="addItemButton" onclick="add_name()">Add Shopping Name</button>    
-  </form>
-  <ul class="itemContainer"></ul>
-  <form action="/shoplist/food-shoplist" method="POST">
-    <input type="hidden" type="text" class="form-control" id="name" name="name">
-    <input type="hidden" type="text" class="form-control" id="items" name="items">
-    <button type="submit" class="btn btn-dark">Create new Shoplist</button>
-  </form>
-</div>
-<div class="shopList">
-  <h3>Here some suggestions you are running out of</h3>
+ <h3>Here some suggestions you are running out of</h3>
 <ul>
-{{#each shopList}}
+{{#each shopListSugestion}}
 <li>{{this.name}}</li>
 {{/each }}
 </ul>
 </div>
-<script>
-   let name = "";
-   let items = "";
-    function add_name() {
-      let text;
-      let shoplist = prompt("Please enter Shoplist name:", "New Shoplist");
-      if (shoplist != null && shoplist != "") {        
-        text = shoplist;
-        this.name = text;
-      }
-      document.getElementById("demo").innerHTML = text;
-  }
- 
-  function add_items() {
-    const itemsContainer = document.querySelector(".itemContainer");
-    let stringList = [];
-    foreach (const item in itemsContainer){
-      stringList.push(item);
-    }
-    this.items = Json.serialize(stringList);
-  }
-  window.onload = function(){
-    if(this.name == "" || this.name == null || this.items == "" || this.items == null){
-      alert("U don't have Items or the list doesn't have name");
-    }
-    else{
 
-     document.getElementById("name").innerHTML=this.name;
-     document.getElementById("items").innerHTML=this.items;
-    }
-  }
-</script>
+<form action="/shoplist/food-shoplist" method="POST">
+  <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control" id="name" name="name">
+        </div>
+         <div class="hidden">
+          <label for="category">Choose a category:</label>
+          <select name="category" id="category" multiple>
+            <option value="Meat">Meat</option>
+            <option value="Vegetable">Vegetable</option>
+            <option value="Fruit">Fruit</option>
+            <option value="Sweets">Sweets</option>
+            <option value="Drinks">Drinks</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="hidden" class="mb-3">
+          <label for="imageUrl" class="form-label">Image Link</label>
+          <input type="text" class="form-control" id="imageUrl" name="imageUrl">
+        </div>
+        <div class="hidden" class="mb-3">
+          <label for="expireDate" class="form-label">Expiration date</label>
+          <input type="date" class="form-control" id="expireDate"
+            name="expireDate">
+        </div>
+        <div class="hidden" class="mb-3">
+          <label for="quantity" class="form-label">Amount</label>
+          <input type="number" class="form-control" id="quantity"
+            name="quantity">
+        </div>
+        <div class="hidden">
+          <label  for="note" class="form-label">Add some comment</label>
+          <input type="text" class="form-control" id="note" name="note">
+        </div> 
+        <button type="submit" class="addItemButton">+</button>
+</form>
+
+
+        <h1>Lista</h1>
+ <ul class="list"> 
+{{#each shopList}}
+<li class="shoplist-items">{{this.name}}</li>
+{{/each }}
+</ul>
 
 
 
