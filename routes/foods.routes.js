@@ -9,6 +9,9 @@ router.get("/", async (req, res, next) => {
     const foods = await Food.find({
       user: user,
     });
+    // const renderFood = foods.filter(
+    //   (food) => food.quantity != null /* && food.user == user */
+    // );
 
     const total = foods.length;
     const totalItems = foods.reduce((acc, food) => {

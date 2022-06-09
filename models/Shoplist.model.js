@@ -1,7 +1,7 @@
 const { Schema, model } = require("mongoose");
 
 const shopListSchema = new Schema({
-  items: { type: String },
+  items: { type: Array },
   name: { type: String },
 });
 
