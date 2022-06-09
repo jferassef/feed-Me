@@ -12,7 +12,8 @@ const foodSchema = new Schema({
   expireDate: { type: Date },
   quantity: { type: Number },
   note: { type: String },
-  user: { type: String}
+  cost: { type: Number },
+  user: { type: String },
 });
 
 const Food = model("Food", foodSchema);
