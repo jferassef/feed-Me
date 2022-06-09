@@ -8,11 +8,10 @@ router.get("/food-shoplist", async (req, res, next) => {
     const { user } = req.session;
     const foods = await Food.find();
     const shopListSugestion = foods.filter(
-      (food) =>
-        food.quantity < 2 && food.quantity != null /* && food.user == user */
+      (food) => food.quantity < 2 && food.quantity != null //&& food.user == user
     );
     const shopList = foods.filter(
-      (food) => food.quantity === null /* && food.user == user */
+      (food) => food.quantity === null // && food.user == user
     );
     res.render("shoplist/food-shoplist", {
       shopList,
@@ -34,6 +33,7 @@ router.post("/food-shoplist", async (req, res, next) => {
       expireDate,
       quantity,
       note,
+      //  user: user,
     });
 
     res.redirect("/shoplist/food-shoplist");
