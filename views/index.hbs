@@ -1,11 +1,16 @@
-<div class="welcome">
-  <h2>Welcome to feed me!</h2>
-  <form action="/" method="post">
-    <div class="mb-3">
-      <label for="name" class="form-label"> Whats your name?</label>
-      <input type="text" class="form-control" id="name" name="name">
+
+  
+  <form class="welcome-form" action="/" method="post">
+  <div class="welcome-title">
+    <h1>Welcome!</h1>
     </div>
-    <button type="submit" class="btn btn-dark">Get Started</button>
-  </form>
-  <a href="/auth/login">Already a feeder?</a>
-</div>
+    <div class="welcome-question">
+      <h2 class="question">Whats your name?</h2>
+    </div>
+    <div class="welcome-name">
+      <input type="text" class="text-name" id="name" name="name">
+      <button class="round-button" type="submit">></button>
+    </div>
+    <a href="/auth/login" class="signup-login">Already a feeder?</a>
+</form>
+     

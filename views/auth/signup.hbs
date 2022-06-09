@@ -1,16 +1,21 @@
-SIGN UP
-
-<form action="/auth/signup" method="POST">
-   <label> Username
-      <input type="text" name="username">
-   </label>
-   <label> Password
-      <input type="password" name="password">
-   </label>
-
-   <button type="submit">Submit</button>
+<form class="login-form" action="/auth/signup" method="POST">
+  <div class="signup-title">
+    <h1 class="title-signup">Sign Up</h1>
+  </div>
+  <div class="usernamesignup">
+    <input type="text" class="username-signup" placeholder="Username" name="username" />
+  </div>
+  <div class="passwordsignup">
+    <input type="password" class="password-signup" placeholder="Password" name="password"/>
+  </div>
+  <div class="buttonsignup">
+    <button type="submit" class="button-signup">Get started</button>
+  </div>
+  <div class="signuplogin">
+     <a href="/auth/login" class="signup-login">Already a feeder?</a>
+  </div>
 </form>
 
 {{#if errorMessage}}
-   {{errorMessage}}
+  {{errorMessage}}
 {{/if}}

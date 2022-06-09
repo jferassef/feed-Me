@@ -1,11 +1,55 @@
-
-a {
-  color: #bdb1ef;
+.navbar-brand {
+  width: 50px;
+  background-color:white;
 }
 
-h1 {
-  color: 12px;
+.logo {
+  height:30px
 }
+.welcome-form{
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-title {
+  font-size: 25px;
+  font-weight: 600;
+  padding-bottom: 35px;
+}
+
+.question {
+  font-size: 20px;
+  font-weight: 300;
+  padding-bottom: 15px;
+}
+
+.welcome-name {
+  display:flex;
+  flex-direction: row;
+  padding-bottom: 20px;
+}
+
+.text-name {
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 8px;
+  border: 1px solid #707070;
+}
+
+.round-button{
+    display: block;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    border: 1px solid #707070;
+    background-color: white;
+}
+
 
 .form{
   margin: 20px 0;
@@ -55,4 +99,142 @@ padding-left: 10px;
 }
 .hidden{
   display: none;
+}
+
+.navbar-toggler{
+  border-color: black;
+}
+
+.login-form{
+  margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-login{
+  font-size: 25px;
+  font-weight: 600;
+  padding-bottom: 35px;
+}
+
+.usernamelogin{
+  padding-bottom: 10px;
+}
+
+.username-login{
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 8px;
+  border: 1px solid #707070;
+}
+
+.passwordlogin{
+  padding-bottom: 20px;
+}
+
+.password-login{
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 8px;
+  border: 1px solid #707070;
+}
+
+
+.button-login {
+  background-color:black;
+  padding-right: 30px;
+  padding-left: 30px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-radius: 8px;
+  color:white;
+  font-size: 15px;
+  border-style: none;
+}
+
+
+.signup-form{
+  margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-signup{
+  font-size: 25px;
+  font-weight: 600;
+  padding-bottom: 35px;
+}
+
+.usernamesignup{
+  padding-bottom: 10px;
+}
+
+.username-signup{
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 8px;
+  border: 1px solid #707070;
+}
+
+.passwordsignup{
+  padding-bottom: 20px;
+}
+
+.password-signup{
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 8px;
+  border: 1px solid #707070;
+}
+
+
+.button-signup {
+  background-color:black;
+  padding-right: 30px;
+  padding-left: 30px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-radius: 8px;
+  color:white;
+  font-size: 15px;
+  border-style: none;
+}
+
+.signuplogin {
+  padding-top:30px;
+}
+
+.signup-login {
+  color: #8A8A8B;
+}
+
+.loginsignup {
+  padding-top:30px;
+}
+
+.login-signup {
+  color: #8A8A8B;
+}
+
+.food-list{
+  margin: 5%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.food-create{
+  margin-left: 43%;
+  border-radius: 20%;
 }

@@ -1,5 +1,44 @@
   {{> navbar}}
-   <h2>Available Food</h2>
+
+<div class="food-list"> 
+<div><h3>Meat</h3>
+<ul>
+   {{#each meats}}
+<li>{{this.name}}</li>
+   {{/each}}
+</ul>
+</div>
+<div><h3>Vegetables</h3>
+ {{#each vegetables}}
+<li>{{this.name}}</li>
+   {{/each}}
+</div>
+<div><h3>Fruit</h3>
+ {{#each fruits}}
+<li>{{this.name}}</li>
+   {{/each}}
+   </div>
+<div><h3>Sweets</h3>
+ {{#each sweets}}
+<li>{{this.name}}</li>
+   {{/each}}
+   </div>
+   <div><h3>Drinks</h3>
+ {{#each drinks}}
+<li>{{this.name}}</li>
+   {{/each}}
+   </div>
+<div><h3>Other</h3>
+ {{#each others}}
+<li>{{this.name}}</li>
+   {{/each}}
+</div>
+</div>
+<a href="/foods/food-create" class="food-create btn btn-dark">Add Food</a>
+
+
+
+   {{!-- <h2>Available Food</h2>
 <div>
     {{#each foods}}
     <a href="/foods/{{this._id}}">{{this.name}}</a>
@@ -18,4 +57,4 @@
 </div>
 
 <div></div>
-<a href="/foods/food-create" class="btn btn-dark">Create Food</a>
+<a href="/foods/food-create" class="btn btn-dark">Create Food</a> --}}

@@ -10,16 +10,31 @@ router.get("/", async (req, res, next) => {
     const foods = await Food.find({
       user: user,
     });
-
-    const total = foods.length;
-    const totalItems = foods.reduce((acc, food) => {
-      return (acc += food.quantity);
-    }, 0);
-
+    const meats = foods.filter(
+      (food) => food.category === "Meat" //&& food.user == user
+    );
+    const vegetables = foods.filter(
+      (food) => food.category === "Vegetable" //&& food.user == user
+    );
+    const fruits = foods.filter(
+      (food) => food.category === "Fruit" //&& food.user == user
+    );
+    const sweets = foods.filter(
+      (food) => food.category === "Sweets" //&& food.user == user
+    );
+    const others = foods.filter(
+      (food) => food.category === "Other" //&& food.user == user
+    );
+    const drinks = foods.filter(
+      (food) => food.category === "Drinks" //&& food.user == user
+    );
     res.render("foods/foods", {
-      foods,
-      total,
-      totalItems,
+      meats,
+      vegetables,
+      fruits,
+      others,
+      sweets,
+      drinks,
     });
   } catch (error) {
     next(error);

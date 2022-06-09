@@ -1,16 +1,21 @@
-LOGIN
-
-<form action="/auth/login" method="POST">
-   <label> Username
-      <input type="text" name="username">
-   </label>
-   <label> Password
-      <input type="password" name="password">
-   </label>
-
-   <button type="submit">Submit</button>
+<form class="login-form" action="/auth/login" method="POST">
+  <div class="login-title">
+    <h1 class="title-login">Welcome back!</h1>
+  </div>
+  <div class="usernamelogin">
+    <input type="text" class="username-login" placeholder="Username" name="username"/>
+  </div>
+  <div class="passwordlogin">
+    <input type="password" class="password-login" placeholder="Password" name="password" />
+  </div>
+  <div class="buttonlogin">
+    <button type="submit" class="button-login">Log in</button>
+  </div>
+  <div class="loginsignup">
+     <a href="/auth/signup" class="login-signup">Sign up</a>
+  </div>
 </form>
 
 {{#if errorMessage}}
-   {{errorMessage}}
+  {{errorMessage}}
 {{/if}}
