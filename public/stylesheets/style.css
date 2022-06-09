@@ -20,7 +20,8 @@ padding-left: 10px;
 }
 
 
-.item{
+
+.shoplist-items{
   background-color: green;
   padding: 15px;
   margin-top: 15px;
@@ -30,6 +31,7 @@ padding-left: 10px;
   border: 100px;
   border-radius:10%;
 }
+
 
 .done{
   background-color: grey;
