@@ -60,7 +60,7 @@ router.post("/signup", (req, res) => {
       })
       .then((user) => {
         req.session.user = user;
-        res.redirect("/");
+        res.redirect("/user/userprofile");
       })
       .catch((error) => {
         if (error instanceof mongoose.Error.ValidationError) {
@@ -86,7 +86,7 @@ router.get("/login", (req, res) => {
 });
 
 router.post("/login", (req, res, next) => {
-  console.log("ESTOY HACIENDO ALGO")
+  console.log("ESTOY HACIENDO ALGO");
   const { username, password } = req.body;
 
   if (!username) {

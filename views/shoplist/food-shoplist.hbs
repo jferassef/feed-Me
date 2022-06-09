@@ -1,14 +1,8 @@
- <h3>Here some suggestions you are running out of</h3>
-<ul>
-{{#each shopListSugestion}}
-<li>{{this.name}}</li>
-{{/each }}
-</ul>
-</div>
 
+<h1>Create Shopping List</h1>
 <form action="/shoplist/food-shoplist" method="POST">
   <div class="mb-3">
-          <label for="name" class="form-label">Name</label>
+          <label for="name" class="form-label">Item Name</label>
           <input type="text" class="form-control" id="name" name="name">
         </div>
          <div class="hidden">
@@ -41,7 +35,7 @@
           <label  for="note" class="form-label">Add some comment</label>
           <input type="text" class="form-control" id="note" name="note">
         </div> 
-        <button type="submit" class="addItemButton">+</button>
+         <button type="submit" class="btn btn-dark">Add new item</button>
 </form>
 
 
@@ -49,8 +43,19 @@
  <ul class="list"> 
 {{#each shopList}}
 <li class="shoplist-items">{{this.name}}</li>
+  <form action="/shoplist/{{this._id}}/delete" method="post">
+      <button class="btn btn-danger" type="submit">Delete Item</button>
+    </form>
 {{/each }}
 </ul>
+
+ <h3>Here some suggestions you are running out of</h3>
+<ul>
+{{#each shopListSugestion}}
+<li>{{this.name}}</li>
+{{/each }}
+</ul>
+</div>
 
 
 
