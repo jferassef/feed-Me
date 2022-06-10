@@ -50,7 +50,6 @@ router.get("/recipes", async (req, res, next) => {
   const foods = await Food.find({
     user: user,
   });
-
   let params = "";
   for (var i = 0; i < foods.length; ++i) params += foods[i].name + ",+";
   params = params.slice(0, -2);
