@@ -44,14 +44,18 @@
 
 <div class="shopping-list">
         <h3>Shopping List</h3>
-    <ul class="list"> 
+    <div><ul class="shopList"> 
     {{#each shopList}}
+    <div class="itemsShop"> 
     <li class="shoplist-items">{{this.name}}</li>
       <form action="/shoplist/{{this._id}}/delete" method="post">
-      <button class="btn btn-danger" type="submit">Delete Item</button>
+      <button class="delete-button" type="submit">-</button>
     </form>
+     <a href="/foods/{{this._id}}/edit" class="delete-button">e</a>
+     </div>
 {{/each }}
 </ul>
+</div>
 
  <div class="suggestions">  
  <h3>Here some suggestions you are running out of</h3>

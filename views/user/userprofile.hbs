@@ -1,25 +1,48 @@
   {{> navbar}}
-<h1>This is user profile</h1>
-
-<div>
-  <a href="/foods" class="btn btn-dark">Check whats on your fridge</a>
-  <a href="/shoplist/food-shopList" class="btn btn-dark">Shopping list</a>
+<div class="pages">
+<div class="pages-profile">
+  <div>
+    <img src="/images/fridge.svg" alt="fridge icon" class="icon-profile"> 
+  </div>
+  <div class="title-profile">
+    <a href="/foods" class="a">Whats on my fridge</a>
+  </div>
 </div>
 
-<div>
-  <h3>Dont know what to eat?</h3>
-  <a href="/foods/recipes" class="btn btn-dark">Check some recepies</a>
+<div class="pages-profile">
+  <div>
+    <img src="/images/Recurso 3.svg" alt="shopping bag" class="icon-profile"> 
+  </div>
+  <div class="title-profile">
+    <a href="/shoplist/food-shopList" class="a">Shopping list</a>
+  </div>
 </div>
 
-<div> 
-<h3>Check Your info</h3>
-  <h5>TOTAL:</h5><span class="total">{{total}}</span> 
-    <h5>TOTAL ITEMS:</h5><span class="items-amount">{{totalItems}}</span>
- <h5>$ Spent in food:</h5><span class="cost">${{moneySpend}}</span> 
+<div class="pages-profile">
+  <div>
+    <img src="/images/recipes.svg" alt="shopping bag" class="icon-profile"> 
+  </div>
+  <div class="title-profile">
+    <a href="/foods/recipes" class="a">Check some recipes</a>
+  </div>
 </div>
 
+</div>
 
-<div class="hidden alert-message">
-  <h3>You`re running out of food</h3><br>
-  <h3>Go to the Store!</h3>
+<div class="my-information">
+  <h3 class="h3-info">My info</h3>
+  <hr>
+    <div class="info"> 
+      <div class="items-info">
+          <h6>Individual items: <span class="items-amount">{{totalItems}}</span></h6>
+          <h6>Total: <span class="total">{{total}}</span> </h6>
+          <h6>€ Spent in food: <span class="cost">${{moneySpend}}</span> </h6>
+      </div>
+
+
+      <div class="hidden alert-message">
+          <h6>You are running out of food.</h6><br>
+          <h6>Go to the Store!</h6>
+      </div>
+    </div>
 </div>

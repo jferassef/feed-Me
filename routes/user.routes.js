@@ -13,7 +13,8 @@ router.get("/userprofile", isLoggedIn, async (req, res, next) => {
     const totalItems = foods.reduce((acc, food) => {
       return (acc += food.quantity);
     }, 0);
-    const moneySpend = foods.reduce((acc, food) => {
+    const filteredMoney = foods.filter((food) => food.cost != null);
+    const moneySpend = filteredMoney.reduce((acc, food) => {
       return (acc += food.cost);
     }, 0);
     res.render("user/userprofile", { total, totalItems, moneySpend });

@@ -10,24 +10,14 @@ router.get("/", async (req, res, next) => {
     const foods = await Food.find({
       user: user,
     });
-    const meats = foods.filter(
-      (food) => food.category === "Meat" //&& food.user == user
-    );
-    const vegetables = foods.filter(
-      (food) => food.category === "Vegetable" //&& food.user == user
-    );
-    const fruits = foods.filter(
-      (food) => food.category === "Fruit" //&& food.user == user
-    );
-    const sweets = foods.filter(
-      (food) => food.category === "Sweets" //&& food.user == user
-    );
-    const others = foods.filter(
-      (food) => food.category === "Other" //&& food.user == user
-    );
-    const drinks = foods.filter(
-      (food) => food.category === "Drinks" //&& food.user == user
-    );
+    const meats = foods.filter((food) => food.category === "Meat");
+    const vegetables = foods.filter((food) => food.category === "Vegetable");
+    const fruits = foods.filter((food) => food.category === "Fruit");
+    const sweets = foods.filter((food) => food.category === "Sweets");
+
+    const others = foods.filter((food) => food.category === "Other");
+
+    const drinks = foods.filter((food) => food.category === "Drinks");
     res.render("foods/foods", {
       meats,
       vegetables,

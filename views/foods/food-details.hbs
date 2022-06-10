@@ -1,6 +1,19 @@
+ <h1 class="details">Check Details:</h1>
 <div>
-  <h1>{{name}}</h1>
-  <h2>{{category}}</h2>
-  <p>{{note}}</p>
-
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{imageUrl}}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{name}}</h5>
+    <p class="card-text">{{note}}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Category: {{category}}</li>
+    <li class="list-group-item"> expireDate: {{ expireDate}}</li>
+    <li class="list-group-item">Quantity: {{quantity}}</li>
+  </ul>
+  <div class="card-body">
+    <a href="/foods/foods" class="btn btn-dark">Go Back</a>
+    <a href="/shoplist/food-shoplist" class="btn btn-dark">Go Shopping</a>
+  </div>
+</div>
 </div>
