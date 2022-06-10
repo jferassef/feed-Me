@@ -1,19 +1,21 @@
-<div class="container">
+<div class="container-create-food">
   <div class="row justify-content-center">
     <div class="col-md-6">
-      <h1>Create Item</h1>
-
-      <hr>
 
       <form action="/foods/food-create" method="POST">
-
-        <div class="mb-3">
-          <label for="name" class="form-label">Name</label>
-          <input type="text" class="form-control" id="name" name="name">
+        <h2 class="title-h2">Create Item</h2>
+        <div class="formcontrol">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Name"
+            id="name"
+            name="name"
+          />
         </div>
-        <div>
-          <label for="category">Choose a category:</label>
-          <select name="category" id="category" multiple>
+        <div class="formcontrol">
+          <select name="category" class="form-select" id="category">
+            <option selected>Choose a category</option>
             <option value="Meat">Meat</option>
             <option value="Vegetable">Vegetable</option>
             <option value="Fruit">Fruit</option>
@@ -23,32 +25,61 @@
           </select>
         </div>
 
-        <div class="mb-3">
-          <label for="imageUrl" class="form-label">Image Link</label>
-          <input type="text" class="form-control" id="imageUrl" name="imageUrl">
+        <div class="formcontrol">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Image Link"
+            id="imageUrl"
+            name="imageUrl"
+          />
         </div>
-        <div class="mb-3">
-          <label for="expireDate" class="form-label">Expiration date</label>
-          <input type="date" class="form-control" id="expireDate"
-            name="expireDate">
+
+        <div class="formcontrol">
+          <label for="expiredate" class="form-label">Expiration Date:</label>
+          <input
+            type="date"
+            class="expire-date"
+            placeholder="Expiration Date"
+            id="expireDate"
+            name="expireDate"
+          />
         </div>
-        <div class="mb-3">
-          <label for="quantity" class="form-label">Amount</label>
-          <input type="number" class="form-control" id="quantity"
-            name="quantity">
+        <div class="formcontrol">
+          <label for="quantity" class="form-label">Amount:</label>
+          <input
+            type="number"
+            class="quantity-food"
+            placeholder="1"
+            id="quantity"
+            name="quantity"
+          />
         </div>
-        <div class="mb-3">
-          <label for="note" class="form-label">Add some comment</label>
-          <input type="text" class="form-control" id="note" name="note">
+        <div class="formcontrol">
+          <label for="cost" class="form-label">Price:</label>
+          <input
+            type="number"
+            class="price-food"
+            placeholder="€"
+            id="cost"
+            name="cost"
+          />
         </div>
-          <div class="mb-3">
-          <label for="cost" class="form-label">cost</label>
-          <input type="number" class="form-control" id="cost" name="cost">
+        <div class="formcontrol">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Notes"
+            id="note"
+            name="note"
+          />
         </div>
-        <button type="submit" class="btn btn-dark">Create new item</button>
-        <a href="/foods" class="btn btn-dark">Go back</a>
+        <div class="create-buttons">
+          <a href="/foods" class="login-signup">Go back</a>
+          <button type="submit" class="create-button">Create new item</button>
+        </div>
+
       </form>
-      <hr>
     </div>
   </div>
 </div>

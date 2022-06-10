@@ -4,10 +4,6 @@ const isLoggedIn = require("../middleware/isLoggedIn");
 const Food = require("../models/Food.model");
 
 router.get("/userprofile", isLoggedIn, async (req, res, next) => {
-  // const foods = await Food.find();
-  // const moneySpend = foods.filter(
-  //   (food) => food.cost //&& food.user == user
-  // );
   try {
     const { user } = req.session;
     const foods = await Food.find({
@@ -17,7 +13,10 @@ router.get("/userprofile", isLoggedIn, async (req, res, next) => {
     const totalItems = foods.reduce((acc, food) => {
       return (acc += food.quantity);
     }, 0);
-    res.render("user/userprofile", { total, totalItems });
+    const moneySpend = foods.reduce((acc, food) => {
+      return (acc += food.cost);
+    }, 0);
+    res.render("user/userprofile", { total, totalItems, moneySpend });
   } catch (error) {
     next(error);
   }

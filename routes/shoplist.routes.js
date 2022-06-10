@@ -6,13 +6,13 @@ const Shoplist = require("../models/Shoplist.model");
 router.get("/food-shoplist", async (req, res, next) => {
   try {
     const { user } = req.session;
-    const foods = await Food.find();
+    const foods = await Food.find({
+      user: user,
+    });
     const shopListSugestion = foods.filter(
-      (food) => food.quantity < 2 && food.quantity != null //&& food.user == user
+      (food) => food.quantity < 2 && food.quantity != null
     );
-    const shopList = foods.filter(
-      (food) => food.quantity === null // && food.user == user
-    );
+    const shopList = foods.filter((food) => food.quantity === null);
     res.render("shoplist/food-shoplist", {
       shopList,
       shopListSugestion,
@@ -33,7 +33,7 @@ router.post("/food-shoplist", async (req, res, next) => {
       expireDate,
       quantity,
       note,
-      //  user: user,
+      user,
     });
 
     res.redirect("/shoplist/food-shoplist");
