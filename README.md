@@ -9,12 +9,19 @@ Hi, welcome to feedMe this is a What´s left on your fridge app, that will keep 
 
 ##Views
 Index: Intro of the lab, will present the logo, user will be starting to familiarize with the app, and enter the name.
+
 Intro-Letter: User will have a friendly welcoming and will know what the app is about.
+
 Signup: User will signup in the app if is the first time using it.
+
 Signin: User will login if already have create a profile before.
+
 User-profile: User will see some general data, as a dashboard, with total of items, a sign if its running out of food, the total of money it spends on food, and the links to the other functionalities.
+
 food-list: User will have all the food separated by categories, and will be able to apply the hole CRUD with all the items.
+
 shoplist: user will create its own shoplist, but also will have some suggestions of items that it has but is running out of.
+
 recepies: user can check which recepies can does with the ingredients it has.
 
 ROUTES
