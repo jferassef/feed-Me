@@ -77,6 +77,6 @@ user: { type: String },
 
 Git hub: https://github.com/jferassef/feed-Me
 
-Deploy:
+Deploy: https://feed--me2022.herokuapp.com/
 
-Trello:
+Trello: https://trello.com/invite/b/UYuuGvj4/4d9ff4e010f1784b7c404d596887ed5a/final-project
