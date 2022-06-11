@@ -7,7 +7,8 @@ Description
 
 Hi, welcome to feedMe this is a What´s left on your fridge app, that will keep track of the flow of food in your daily life, meaning the food you enter to your fridge and let you know when you are running out of it. Wait! no just that, you can also generate your own shopping list, or check some cool recipes you can do with the ingredients you have. User will have a profile to create all that previously mentioned and some information about the data its entering.
 
-##Views
+## Views
+
 Index: Intro of the lab, will present the logo, user will be starting to familiarize with the app, and enter the name.
 
 Intro-Letter: User will have a friendly welcoming and will know what the app is about.
@@ -24,10 +25,12 @@ shoplist: user will create its own shoplist, but also will have some suggestions
 
 recepies: user can check which recepies can does with the ingredients it has.
 
-ROUTES
+### ROUTES
+
 table goes here
 
-MODELS
+#### MODELS
+
 User model:
 name: { type: String },
 username: {
