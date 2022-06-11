@@ -2,10 +2,10 @@
 
 <div class="food-list"> 
 <div><h3>Meat</h3>
-<ul >
+<ul class="stylelist" >
    {{#each meats}}
    <div  class="foodType-list"> 
-<li > <a href="/foods/{{this._id}}">{{this.name}}</a></li>
+<li  class="ff"> <a href="/foods/{{this._id}}">{{this.name}}: {{this.quantity}}</a></li>
  <form action="/foods/{{this._id}}/delete" method="post">
       <button class="delete-button" type="submit">x</button>
     </form>
@@ -17,7 +17,7 @@
 <ul>
  {{#each vegetables}}
  <div class="foodType-list">
-<li> <a href="/foods/{{this._id}}">{{this.name}}</a></li>
+<li class="stylelist"> <a href="/foods/{{this._id}}">{{this.name}}: {{this.quantity}}</a></li>
 <form action="/foods/{{this._id}}/delete" method="post">
       <button class="delete-button" type="submit">x</button>
     </form>
@@ -29,7 +29,7 @@
 <ul>
  {{#each fruits}}
  <div  class="foodType-list">
-<li> <a href="/foods/{{this._id}}">{{this.name}}</a></li>
+<li> <a href="/foods/{{this._id}}">{{this.name}}: {{this.quantity}}</a></li>
 <form action="/foods/{{this._id}}/delete" method="post">
       <button class="delete-button" type="submit">x</button>
     </form>
@@ -40,7 +40,7 @@
 <div><h3>Sweets</h3>
  {{#each sweets}}
  <div class="foodType-list">
-<li> <a href="/foods/{{this._id}}">{{this.name}}</a></li>
+<li> <a href="/foods/{{this._id}}">{{this.name}}: {{this.quantity}}</a></li>
 <form action="/foods/{{this._id}}/delete" method="post">
       <button class="delete-button" type="submit">x</button>
     </form>
@@ -50,7 +50,7 @@
    <div><h3>Drinks</h3>
  {{#each drinks}}
  <div class="foodType-list">
-<li> <a href="/foods/{{this._id}}">{{this.name}}</a></li>
+<li> <a href="/foods/{{this._id}}">{{this.name}}: {{this.quantity}}</a></li>
 <form action="/foods/{{this._id}}/delete" method="post">
       <button class="delete-button" type="submit">x</button>
     </form>
@@ -60,17 +60,17 @@
 <div><h3>Other</h3>
  {{#each others}}
  <div class="foodType-list"> 
-<li> <a href="/foods/{{this._id}}">{{this.name}}</a></li>
-<form action="/foods/{{this._id}}/delete" method="post">
-      <button class="delete-button" type="submit">x</button>
+<li> <a href="/foods/{{this._id}}">{{this.name}}: {{this.quantity}}</a></li>
+<form  action="/foods/{{this._id}}/delete" method="post">
+      <button class=" delete-button" type="submit">x</button>
     </form>
   </div>
    {{/each}}
 </div>
 </div>
-<a href="/foods/food-create" class="food-create btn btn-dark">Add Food</a>
-
-
+<form action="/foods/food-create">
+<button class="buttonAdd"><span>Add Food</span></button>
+</form>
 
    {{!-- <h2>Available Food</h2>
 <div>

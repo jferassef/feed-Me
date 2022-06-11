@@ -4,7 +4,7 @@
       <form action="/shoplist/food-shoplist" method="POST">
      <div class="shopform">
       <div class="item">
-          <input type="text" class="form-control" placeholder="New item" id="name" name="name">
+          <input type="text" class="form-control" placeholder="Add New item" id="name" name="name">
       </div>
          <div class="hidden">
           <label for="category">Choose a category:</label>
@@ -43,22 +43,23 @@
 </div>
 
 <div class="shopping-list">
-        <h3>Shopping List</h3>
-    <div><ul class="shopList"> 
+        <div>
+        <h1>Shopping List</h1>
+    <ul class="shopList"> 
     {{#each shopList}}
     <div class="itemsShop"> 
     <li class="shoplist-items">{{this.name}}</li>
       <form action="/shoplist/{{this._id}}/delete" method="post">
       <button class="delete-button" type="submit">-</button>
     </form>
-     <a href="/foods/{{this._id}}/edit" class="delete-button">e</a>
+     <a href="/foods/{{this._id}}/edit" class="delete-button">></a>
      </div>
 {{/each }}
 </ul>
 </div>
 
  <div class="suggestions">  
- <h3>Here some suggestions you are running out of</h3>
+ <h1>You are running out of:</h1>
 <ul>
 {{#each shopListSugestion}}
 <li>{{this.name}}</li>

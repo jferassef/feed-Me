@@ -29,20 +29,7 @@ router.post("/signup", (req, res) => {
     });
   }
 
-  /*
-  const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
-
-  if (!regex.test(password)) {
-    return res.status(400).render("signup", {
-      errorMessage:
-        "Password needs to have at least 8 chars and must contain at least one number, one lowercase and one uppercase letter.",
-    });
-  }
-  */
-
-  // Search the database for a user with the username submitted in the form
   User.findOne({ username }).then((found) => {
-    // If the user is found, send the message username is taken
     if (found) {
       return res
         .status(400)
@@ -86,9 +73,7 @@ router.get("/login", (req, res) => {
 });
 
 router.post("/login", (req, res, next) => {
-  console.log("ESTOY HACIENDO ALGO");
   const { username, password } = req.body;
-
   if (!username) {
     return res.status(400).render("auth/login", {
       errorMessage: "Please provide your username.",

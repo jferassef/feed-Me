@@ -1,10 +1,10 @@
 const router = require("express").Router();
 const Food = require("../models/Food.model");
 const User = require("../models/User.model");
-const Shoplist = require("../models/Shoplist.model");
 const axios = require("axios");
+const isLoggedIn = require("../middleware/isLoggedIn");
 
-router.get("/", async (req, res, next) => {
+router.get("/", isLoggedIn, async (req, res, next) => {
   try {
     const { user } = req.session;
     const foods = await Food.find({
@@ -31,11 +31,11 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-router.get("/food-create", (req, res, next) => {
+router.get("/food-create", isLoggedIn, (req, res, next) => {
   res.render("foods/food-create");
 });
 
-router.get("/recipes", async (req, res, next) => {
+router.get("/recipes", isLoggedIn, async (req, res, next) => {
   const { user } = req.session;
   const foods = await Food.find({
     user: user,
@@ -55,7 +55,7 @@ router.get("/recipes", async (req, res, next) => {
   res.render("foods/food-recipes", { data: data });
 });
 
-router.post("/food-create", async (req, res, next) => {
+router.post("/food-create", isLoggedIn, async (req, res, next) => {
   try {
     const { name, category, imageUrl, expireDate, quantity, note, cost } =
       req.body;
@@ -77,7 +77,7 @@ router.post("/food-create", async (req, res, next) => {
   }
 });
 
-router.get("/:id/edit", async (req, res, next) => {
+router.get("/:id/edit", isLoggedIn, async (req, res, next) => {
   try {
     const { id } = req.params;
     const food = await Food.findById(id);
@@ -87,7 +87,7 @@ router.get("/:id/edit", async (req, res, next) => {
   }
 });
 
-router.post("/:id/edit", async (req, res, next) => {
+router.post("/:id/edit", isLoggedIn, async (req, res, next) => {
   try {
     const { id } = req.params;
     const { name, category, imageUrl, expireDate, quantity, note } = req.body;
@@ -104,7 +104,7 @@ router.post("/:id/edit", async (req, res, next) => {
   }
 });
 
-router.post("/:id/delete", async (req, res, next) => {
+router.post("/:id/delete", isLoggedIn, async (req, res, next) => {
   try {
     const { id } = req.params;
     await Food.findByIdAndDelete(id);
@@ -114,7 +114,7 @@ router.post("/:id/delete", async (req, res, next) => {
   }
 });
 
-router.get("/:id", async (req, res) => {
+router.get("/:id", isLoggedIn, async (req, res) => {
   try {
     const { id } = req.params;
     const food = await Food.findById(id);

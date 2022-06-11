@@ -1,6 +1,8 @@
 .navbar-brand {
   width: 50px;
   background-color:white;
+  height: 40px;
+  padding-top: 1px;
 }
 
 .p {
@@ -23,7 +25,7 @@
 }
 
 .logo {
-  height:30px
+  height:40px;
 }
 .welcome-form{
   margin-top: 100px;
@@ -83,8 +85,9 @@ padding-left: 10px;
 
 .shoplist-items{
   padding: 15px;
-  margin-top: 15px;
   color:black;
+  list-style:none;
+  font-size: 25px;
 }
 
 
@@ -232,11 +235,17 @@ padding-left: 10px;
 }
 
 .food-list{
-  margin: 5%;
-  margin-left: 5;
+  margin-top: 8%;
+  margin-left: 8;
   display: flex;
   justify-content: space-around;
+  list-style:none;
 }
+
+.food-list h3{
+  margin-left: 20px;
+}
+
 
 .food-create{
   margin-left: 43%;
@@ -252,6 +261,7 @@ padding-left: 10px;
 }
 
 .delete-button{
+  padding-bottom: 25px;
   margin-left: 10;
   display: block;
   height: 20px;
@@ -467,4 +477,73 @@ h6 {
 .h3-info {
   display:flex;
   justify-content: center;
+}
+
+.recipeList{
+  display:flex;
+  flex-wrap: wrap;
+}
+
+.stylelist{
+ list-style:none;
+}
+
+.itemsShop{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.itemsShop button, a{
+  margin-top: 20px;
+}
+
+.missedItems{
+  list-style:none;
+}
+
+.buttonAdd {
+  border-radius: 4px;
+  background-color: black;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 14px;
+  padding: 5px;
+  width: 100px;
+  height:30px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left: 45%;
+}
+
+.buttonAdd span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttonAdd span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonAdd:hover span {
+  padding-right: 25px;
+}
+
+.buttonAdd:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.recipesButtons{
+display: flex;
+justify-content: center;
+
 }

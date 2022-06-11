@@ -9,7 +9,8 @@ router.get("/userprofile", isLoggedIn, async (req, res, next) => {
     const foods = await Food.find({
       user: user,
     });
-    const total = foods.length;
+    const filteredFood = foods.filter((food) => food.quantity != null);
+    const total = filteredFood.length;
     const totalItems = foods.reduce((acc, food) => {
       return (acc += food.quantity);
     }, 0);

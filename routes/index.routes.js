@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const User = require("../models/User.model");
+const isLoggedOut = require("../middleware/isLoggedOut");
 
-/* GET home page */
 router.get("/", (req, res, next) => {
   res.render("index");
 });
