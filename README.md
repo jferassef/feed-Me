@@ -27,10 +27,26 @@ recepies: user can check which recepies can does with the ingredients it has.
 
 ### ROUTES
 
-| First Header | Second Header |
-| ------------ | ------------- |
-| Content Cell | Content Cell  |
-| Content Cell | Content Cell  |
+| Foods ROUTES       | VERB | Description       | View                |
+| ------------------ | ---- | ----------------- | ------------------- |
+| /foods             | get  | getl all foods    | /foods              |
+| /foods/food-create | get  | add new food form | /foods/food-create  |
+| /foods/food-create | POST | add new food      | /foods/food-create  |
+| /recipes           | get  | check recipes     | /foods/recipes      |
+| /:id/edit          | get  | edit form         | /foods/id/edit      |
+| /:id/edit          | post | edit food         | /foods/id/edit      |
+| /:id/delete        | post | delete food       | /foods              |
+| /:id               | get  | see food details  | /foods/food-details |
+
+| Shoplist ROUTES         | VERB | Description    | View                    |
+| ----------------------- | ---- | -------------- | ----------------------- |
+| /shoplist/food-shoplist | get  | check shoplist | /shoplist/food-shoplist |
+| /shoplist/food-shoplist | post | create items   | /shoplist/food-shoplist |
+| /id/delete              | post | delete items   | /shoplist/food-shoplist |
+
+| User ROUTES      | VERB | Description           | View              |
+| ---------------- | ---- | --------------------- | ----------------- |
+| user/userprofile | get  | render user dashboard | /user/userprofile |
 
 #### MODELS
 
