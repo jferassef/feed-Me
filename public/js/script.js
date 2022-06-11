@@ -17,15 +17,3 @@ alertMessage = () => {
 };
 
 alertMessage();
-
-// window.onload = () => {
-//   const printChart = (labels, data) => {
-//     const ctx = document.querySelector("#myChart").getContext("2d");
-
-//     const chart = new Chart(ctx, {
-//       type: "bar",
-//       labels,
-//       datasets: [{ label: "quantities", backgroundColor: "blue", data }],
-//     });
-//   };
-// };
