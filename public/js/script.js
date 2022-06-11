@@ -6,17 +6,6 @@ document.addEventListener(
   false
 );
 
-// addItemEvent = () => {
-//   const shopItems = document.querySelector(".shoplist-items");
-//   shopItems.addEventListener("click", changeItemState);
-// };
-
-// changeItemState = () => {
-//   shopItems.target.classList.toggle("done");
-// };
-
-// addItemEvent();
-
 alertMessage = () => {
   const total = document.querySelector(".total");
   const alertMessage = document.querySelector(".alert-message");
@@ -28,3 +17,15 @@ alertMessage = () => {
 };
 
 alertMessage();
+
+// window.onload = () => {
+//   const printChart = (labels, data) => {
+//     const ctx = document.querySelector("#myChart").getContext("2d");
+
+//     const chart = new Chart(ctx, {
+//       type: "bar",
+//       labels,
+//       datasets: [{ label: "quantities", backgroundColor: "blue", data }],
+//     });
+//   };
+// };
